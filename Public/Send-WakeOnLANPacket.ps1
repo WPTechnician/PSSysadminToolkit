@@ -15,7 +15,6 @@ Function Send-WakeOnLANPacket {
     Begin {}
 
     Process {
-        $regex = 
         if($_ -match "/^(?:[[:xdigit:]]{2}([-:]))(?:[[:xdigit:]]{2}\1){4}[[:xdigit:]]{2}$/")
         {
             $MACArray = $_ -split "[:-]" | ForEach-Object { [Byte]"0x$_"}
